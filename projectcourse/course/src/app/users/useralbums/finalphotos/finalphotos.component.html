@@ -1,0 +1,16 @@
+<div class="col-lg-pull-1">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>List of Images</h1>
+            <ul class="list-group" *ngFor="let pics of listofpics">
+
+                <img [src]="pics.url " alt="{{pics.thumbnailUrl}} " class="img-responsive " style="max-height:300px; ">
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div>
+    <button class="btn btn-success" routerLink="album" (click)="changeflag() ">Back</button>
+</div>

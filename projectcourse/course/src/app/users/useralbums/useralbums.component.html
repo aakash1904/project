@@ -1,0 +1,18 @@
+<div class="pull-right">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>List of Albums</h1>
+            <p>Please select a album and scroll down to have a look at pictures</p>
+            <ul class="list-group" *ngFor="let album of albumsreturned">
+                <li class="list-group-item" *ngIf="checkforId(+album.userId)"><a routerLink="album/photos" (click)="getAlbumId(+album.id)">{{album.title}}</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+
+        <button class="btn btn-success" routerLink="/users" (click)="changeflagforuser()">Back</button>
+    </div>
+</div>
+<div class="panel-default">
+    <app-finalphotos [idforpics]="passid" [flag]="flag" *ngIf="this.flag"></app-finalphotos>
+</div>

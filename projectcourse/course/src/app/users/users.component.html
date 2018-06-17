@@ -1,0 +1,15 @@
+<div class="pull-left">
+
+    <div class="col-xs-12">
+        <h1>List of Users</h1>
+        <ul class="list-group" *ngFor="let user of users">
+            <li class="list-group-item"><a routerLink="album" (click)="passId(+user.id)">{{user.id + "."}} {{ user.name }}</a></li>
+        </ul>
+    </div>
+
+</div>
+<div class="pull-right">
+    <div class="col-xs-12">
+        <app-useralbums [idalbum]="idtopass" [userflag]="userflag" *ngIf="this.userflag"></app-useralbums>
+    </div>
+</div>
